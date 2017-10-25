@@ -6,6 +6,7 @@ git_source :github do |repo_name|
 end
 
 gem "bcrypt", "~> 3.1.7"
+gem "bootstrap-sass"
 gem "coffee-rails", "~> 4.2"
 gem "faker"
 gem "jbuilder", "~> 2.5"

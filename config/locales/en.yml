@@ -1,2 +1,13 @@
 en:
-  hello: "Hello world"
+  title: "Framgia E-learning System"
+  header:
+    app_name: "FELS"
+    about: "About Us"
+    login: "Log In"
+    sign_up: "Sign Up"
+  footer:
+    copyright: "© fels.framgia.com"
+  home:
+    sign_up: "Sign Up"
+    description: "The most intelligent way to improve vocabulary in English."
+    get_start: "Get Started"

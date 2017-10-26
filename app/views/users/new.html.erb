@@ -1,0 +1,21 @@
+<% provide :submit_path, signup_path %>
+<% provide :button_text, t("user.new_view.create") %>
+<div id="index-banner">
+  <%= render "shared/error_message", object: @user %>
+  <div class="container" id="signup-form">
+    <div class="form-padding">
+      <div class="col s12">
+        <div class="card hoverable">
+          <div class="card-content">
+            <span class="card-title center">
+              <%= t "user.new_view.signup" %>
+            </span>
+            <div class="divider"></div>
+            <br>
+            <%= render "form_user" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,17 @@
-<div id="headerwrap">
-  <div class="container">
-    <h1 class="header center page-title">
+<div class="section no-pad-bot cover" id="index-banner">
+  <div class="row" id="title-box">
+    <h1 class="header center white-text">
       <%= t "title" %>
     </h1>
-    <div class="row center">
-        <%= link_to t("home.get_start"), "#",
-          {class: "waves-effect waves-light btn"} %>
+    <div class="row center white-text">
+      <h5 class="header col s12 light"><%= t "home.description" %></h5>
     </div>
   </div>
+  <div class="row center">
+    <%= link_to t("home.get_start"), signup_path,
+      {class: "btn-large waves-effect light-green darken-4 waves-light",
+      id: "download-button"} %>
+  </div>
+  <br>
+  <br>
 </div>

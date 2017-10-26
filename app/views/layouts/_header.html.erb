@@ -1,17 +1,12 @@
-<div class="navbar-fixed">
+<header class="navbar-fixed">
   <nav>
-    <div class="nav-wrapper">
-      <%= link_to t("header.app_name"), "#", {class: "brand-logo"} %>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li>
-          <%= link_to t("header.login"), "#",
-            {class: "waves-effect waves-light btn header-btn"} %>
-        </li>
-        <li>
-          <%= link_to t("header.sign_up"), "#",
-            {class: "waves-effect waves-light btn header-btn"} %>
-        </li>
+    <div class="nav-wrapper" id="header-navbar">
+      <%= link_to t("header.app_name"), root_path,
+        {class: "brand-logo", id: "app-logo"} %>
+      <ul class="right hide-on-med-and-down header-list" id="nav-mobile">
+        <li><%= link_to t("header.signup"), signup_path %></li>
+        <li><%= link_to t("header.login"), "#" %></li>
       </ul>
     </div>
   </nav>
-</div>
+</header>

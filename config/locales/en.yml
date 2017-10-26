@@ -4,10 +4,22 @@ en:
     app_name: "FELS"
     about: "About Us"
     login: "Log In"
-    sign_up: "Sign Up"
+    signup: "Sign Up"
   footer:
     copyright: "© fels.framgia.com"
   home:
-    sign_up: "Sign Up"
+    signup: "Sign Up"
     description: "The most intelligent way to improve vocabulary in English."
     get_start: "Get Started"
+  user:
+    create_success: "Create account succesful"
+    create_failed: "Cannot create account"
+    new_view:
+      signup: "Sign Up"
+      create: "Create account"
+    form_view:
+      avatar: "Avatar"
+      username: "Username"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirmation"

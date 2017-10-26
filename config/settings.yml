@@ -1,0 +1,7 @@
+user:
+  avatar_width: 50
+  avatar_height: 50
+  avatar_type: "image/jpeg,image/gif,image/png"
+  max_name: 50
+  max_email: 255
+  min_password: 6

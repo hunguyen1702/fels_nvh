@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20171024132147) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "action_type"
-    t.string "description"
+    t.text "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20171024132147) do
     t.string "email"
     t.string "name"
     t.string "password_digest"
-    t.integer "role"
+    t.integer "role", default: 0
     t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

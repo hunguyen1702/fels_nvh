@@ -7,9 +7,13 @@ end
 
 gem "bcrypt", "~> 3.1.7"
 gem "bootstrap-sass"
+gem "carrierwave", "1.1.0"
 gem "coffee-rails", "~> 4.2"
+gem "config"
 gem "faker"
 gem "jbuilder", "~> 2.5"
+gem "jquery-rails"
+gem "mini_magick", "4.7.0"
 gem "mysql2", "~> 0.3.18"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.2"

@@ -14,7 +14,11 @@
   </head>
 
   <body>
-    <%= render "layouts/header" %>
+    <% if logged_in? %>
+      <%= render "layouts/header_logged_in" %>
+    <% else %>
+      <%= render "layouts/header" %>
+    <% end %>
     <%= yield %>
     <% flash.each do |message_type, message| %>
       <%= javascript_tag "Materialize.toast('#{message}',

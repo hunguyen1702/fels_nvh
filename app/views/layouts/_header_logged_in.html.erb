@@ -1,0 +1,48 @@
+<div class="navbar-fixed">
+  <ul id="dropdown1" class="dropdown-content">
+    <li>
+      <a href="#!" class="a-dropdown">
+        <i class="material-icons dropdown-icons">contacts</i>
+        <%= t "header.profile_setting" %>
+      </a>
+    </li>
+    <li>
+      <a href="#!" class="a-dropdown">
+        <i class="material-icons dropdown-icons">collections_bookmark</i>
+        <%= t "header.history" %>
+      </a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <%= content_tag :a, href: logout_path, rel: "nofollow",
+        "data-method": :delete, class: "a-dropdown" do %>
+        <%= content_tag :i, "exit_to_app", class: "material-icons dropdown-icons" %>
+        <%= t "header.logout" %>
+      <% end %>
+    </li>
+  </ul>
+  <nav class="nav-extended green darken-4">
+    <div class="nav-wrapper">
+      <%= link_to t("header.app_name"), root_path,
+        class: "brand-logo", id: "home-logo" %>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <a href="#about">
+            <%= t "header.start_lesson" %>
+          </a>
+        </li>
+        <li>
+          <a href="#about">
+            <%= t "header.word_list" %>
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-button" href="#!" data-activates="dropdown1">
+            <%= t "header.account" %>
+            <i class="material-icons right" id="dd-arrow">arrow_drop_down</i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

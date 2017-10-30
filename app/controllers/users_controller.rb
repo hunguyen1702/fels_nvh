@@ -9,8 +9,8 @@ class UsersController < ApplicationController
       flash[:info] = t "user.create_success"
       redirect_to root_path
     else
-      flash.now[:danger] = t "user.create_failed"
-      render :new
+      flash[:danger] = t "user.create_failed"
+      redirect_to signup_path
     end
   end
 

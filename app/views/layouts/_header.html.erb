@@ -1,11 +1,21 @@
-<header class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper" id="header-navbar">
-      <%= link_to t("header.app_name"), root_path,
-        {class: "brand-logo", id: "app-logo"} %>
-      <ul class="right hide-on-med-and-down header-list" id="nav-mobile">
-        <li><%= link_to t("header.signup"), signup_path %></li>
-        <li><%= link_to t("header.login"), "#" %></li>
+<div class="navbar-fixed">
+  <nav class="nav-extended green darken-4">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo" id="home-logo">
+        <%= t "header.app_name" %>
+      </a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#"><%= t "header.about" %></a></li>
+        <li><a href="#"><%= t "header.sign_up" %></a></li>
+        <li><a href="#"><%= t "header.login" %></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#"><%= t "header.about" %></a></li>
+        <li><a href="#"><%= t "header.sign_up" %></a></li>
+        <li><a href="#"><%= t "header.login" %></a></li>
       </ul>
     </div>
   </nav>

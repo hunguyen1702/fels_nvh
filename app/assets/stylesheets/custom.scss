@@ -1,47 +1,219 @@
-$dark-gray: #33363b;
-$light-green: #4db538;
-$light-green-material: #558b2f;
-$light-blue: #de4242;
+$dark-green: #1b5e20;
+$gray-white: #f5f5f5;
+$light-gray: #ccc;
 
-#app-logo {
-  margin-left: 45px;
+#home-logo {
+  margin-left: 20px;
 }
 
-.header-list {
-  margin-right: 35px;
+.home-icons {
+  height: 18px;
+  margin-right: 5px;
+  width: 18px;
 }
 
-#index-banner {
-  background-image: url('bg01.png');
-  background-size: contain;
-  height: 90vh;
-  background-size: cover;
-  display: flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  margin: 0 auto;
+.avatar {
+  height: 200px;
+  width: 200px;
 }
 
-#header-navbar {
-  background-color: $dark-gray;
+.avatar-borders {
+  margin-bottom: 5px;
 }
 
-#title-box {
-  background-color: $dark-gray;
-  opacity: 0.8;
+#word-info {
+  margin-left: 20px;
+  padding-top: 20px;
+}
+
+#user-quick-info {
+  border: 1px solid $light-gray;
+  height: 610px;
+  margin-top: 2px;
+  padding-top: 5px;
+}
+
+.home-feed {
+  border: 1px solid $light-gray;
+  height: 610px;
+  margin-top: 2px;
+  overflow: hidden;
+}
+
+.home-feed:hover {
+  overflow: auto;
+}
+
+.profile-headers {
+  background-color: white;
+  margin: 0px;
+  position: fixed;
+  width: 39%;
+}
+
+.profile-dividers {
+  margin-top: 70px;
+}
+
+#dropdown1 {
+  left: 1170px !important;
+  width: 190px !important;
+}
+
+#feed {
+  margin-bottom: 0px;
+}
+
+.material-icons {
+  color: $dark-green;
+  display: inline-block !important;
+  vertical-align: middle;
+}
+
+.h6-info {
+  color: $dark-green;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.a-dropdown {
+  color: $dark-green !important;
+}
+
+#dd-arrow {
+  color: white;
+}
+
+#follow-info {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.follow-link {
+  color: $dark-green;
+}
+
+#username {
+  margin-bottom: 0px;
+}
+
+.home-title {
+  color:  $gray-white;
+  margin-top: 140px;
+  opacity: 0.9;
+  padding: 3px 5px 15px 5px;
+  text-align: center;
   width: 850px;
+}
+
+.dropdown-icons {
+  margin-right: 2px !important;
+}
+
+.parallax-container {
+  text-align: center;
+}
+
+#form-container {
+  height: 650px;
+}
+
+#ps-box {
+  width: 70%;
+}
+
+#get-start-btn {
+  background-color: $dark-green;
+  font-size: 1.5rem;
   height: auto;
+  margin-top: 15px;
+  padding: 5px 10px 5px 10px;
 }
 
-#signup-form {
-  width: 500px;
+.btn {
+  background-color: $dark-green !important;
 }
 
-.flash-danger {
-  background-color: red;
+#follow-btn {
+  margin: 0px auto 0px auto;
 }
 
-.flash-info {
-  background-color: $light-green-material;
+.form-box {
+  background: white;
+  opacity: 0.9;
+  width: 40%;
+}
+
+.form-box:hover {
+  box-shadow: 0 10px 15px 0 $dark-green;
+  opacity: 0.95;
+}
+
+#signup-parallax {
+  height: 650px;
+  margin-top: auto;
+}
+
+#forgot-pwd {
+  color: $dark-green;
+}
+
+.rm-checkbox:checked+label:before {
+  -moz-transform-origin: 100% 100%;
+  -moz-transform: rotate(40deg);
+  -ms-transform-origin: 100% 100%;
+  -ms-transform: rotate(40deg);
+  -o-transform-origin: 100% 100%;
+  -o-transform: rotate(40deg);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-origin: 100% 100%;
+  -webkit-transform: rotate(40deg);
+  border-bottom: 2px solid $dark-green;
+  border-left: 2px solid transparent;
+  border-right: 2px solid $dark-green;
+  border-top: 2px solid transparent;
+  height: 22px;
+  left: -3px;
+  top: -4px;
+  transform-origin: 100% 100%;
+  transform: rotate(40deg);
+  width: 12px;
+}
+
+#signup-title {
+  color: $dark-green;
+  margin: 20px auto auto auto;
+  padding-top: 1px;
+}
+
+.input-field input[type=text]:focus + label,
+.input-field input[type=email]:focus + label,
+.input-field input[type=password]:focus + label {
+  color: $dark-green !important;
+}
+
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid $dark-green !important;
+  box-shadow: 0 1px 0 0 $dark-green !important;
+}
+
+button {
+  background-color: $dark-green !important;
+}
+
+.promo i {
+  color: $dark-green;
+  font-size: 4rem;
+  margin: 30px 0 0 0;
+}
+
+.promo-caption {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.contact-us {
+  margin: 40px;
 }

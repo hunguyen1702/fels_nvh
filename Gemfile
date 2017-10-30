@@ -6,6 +6,7 @@ git_source :github do |repo_name|
 end
 
 gem "bcrypt", "~> 3.1.7"
+gem "bootstrap-kaminari-views"
 gem "bootstrap-sass"
 gem "carrierwave", "1.1.0"
 gem "coffee-rails", "~> 4.2"
@@ -14,6 +15,7 @@ gem "faker"
 gem "i18n-js"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
+gem "kaminari"
 gem "mini_magick", "4.7.0"
 gem "mysql2", "~> 0.3.18"
 gem "puma", "~> 3.7"

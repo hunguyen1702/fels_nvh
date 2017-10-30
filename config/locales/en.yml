@@ -46,8 +46,13 @@ en:
       Nullam eget dignissim mauris, non tristique erat.
       Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
   user:
-    create_success: "Create account succesful"
+    create_success: "Create account successful.
+      Please check your email to activate your account"
     create_failed: "Cannot create account"
+    activate_failed: "Invalid activation links"
+    activate_success: "Account activated"
+    not_activate: "Account not activated.
+      Check your email for the activation link."
     new_view:
       signup: "Sign Up"
       create: "Create account"
@@ -60,3 +65,10 @@ en:
       go: "Go!"
       login_failed: "Cannot log in"
       login_success: "Log in succesful"
+  mailer:
+    account_activation:
+      activate: "Activate"
+      subject: "Account activation"
+      greeting: "Hi %{user_name},"
+      content: "Welcome to Framgia English Learning System!
+        Click on the link below to activate your account:"

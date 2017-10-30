@@ -1,0 +1,10 @@
+<%= content_tag :h1, t("title") %>
+
+<%= content_tag :p,
+  t("mailer.account_activation.greeting", {user_name: @user.name}) %>
+
+<%= content_tag :p, t("mailer.account_activation.content") %>
+
+<%= link_to t("mailer.account_activation.activate"),
+  edit_account_activation_url(@user.activation_token, email: @user.email) %>
+

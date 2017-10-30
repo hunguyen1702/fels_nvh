@@ -1,21 +1,46 @@
-<% provide :submit_path, signup_path %>
-<% provide :button_text, t("user.new_view.create") %>
-<div id="index-banner">
-  <%= render "shared/error_message", object: @user %>
-  <div class="container" id="signup-form">
-    <div class="form-padding">
-      <div class="col s12">
-        <div class="card hoverable">
-          <div class="card-content">
-            <span class="card-title center">
-              <%= t "user.new_view.signup" %>
-            </span>
-            <div class="divider"></div>
-            <br>
-            <%= render "form_user" %>
+<%= provide :title, t("user.new_view.signup") %>
+<div class="parallax-container" id="signup-parallax">
+  <div class="parallax">
+    <%= image_tag "bg01.png" %>
+  </div>
+  <div class="row form-box">
+    <div class="row center" id="signup-title">
+      <h4><%= t "user.new_view.signup" %></h4>
+    </div>
+    <br>
+    <%= form_for @user, url: signup_path, class: "col s12" do |f| %>
+      <div class="container">
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.email_field :email, class: "validate" %>
+            <%= f.label :email, for: :email %>
           </div>
         </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.text_field :name, class: "validate" %>
+            <%= f.label :name, for: :name %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.password_field :password, class: "validate" %>
+            <%= f.label :password, for: :password %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.password_field :password_confirmation, class: "validate" %>
+            <%= f.label t("user.form_view.password_confirmation"),
+              for: :password %>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.submit t("user.new_view.create"),
+            class: "btn btn-large btn-register waves-effect waves-light" %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
+<%= render "layouts/footer" %>

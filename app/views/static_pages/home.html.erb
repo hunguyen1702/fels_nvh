@@ -7,9 +7,8 @@
     <h2><%= t "home.banner" %></h2>
     <h5><%= t "home.banner_des" %></h5>
   </div>
-  <a class="waves-effect waves-light btn" id="get-start-btn">
-    <%= t "home.banner_btn" %>
-  </a>
+  <%= link_to t("home.banner_btn"), signup_path,
+    class: "waves-effect waves-light btn", id: "get-start-btn" %>
 </div>
 
 <div class="container">
@@ -42,13 +41,6 @@
       </div>
     </div>
   </div>
-  <div class="row center">
-    <%= link_to t("home.get_start"), signup_path,
-      {class: "btn-large waves-effect light-green darken-4 waves-light",
-      id: "download-button"} %>
-  </div>
-  <br>
-  <br>
 </div>
 
 <div class="parallax-container">

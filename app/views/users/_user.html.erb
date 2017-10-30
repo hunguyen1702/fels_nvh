@@ -1,0 +1,19 @@
+<li>
+  <div class="row">
+    <div class="col s2 item-list-data">
+      <%= user.name %>
+    </div>
+    <div class="col s3 item-list-data">
+      <%= user.email %>
+    </div>
+    <div class="col s2 item-list-data">
+      <%= image_tag user.avatar.url, class: "index-avatar" %>
+    </div>
+    <div class="col s2 item-list-data">
+      <% if !user.is_user? current_user %>
+        <%= link_to t("user.index_view.view_profile"), user,
+        class: "waves-effect waves-light btn" %>
+      <% end %>
+    </div>
+  </div>
+</li>

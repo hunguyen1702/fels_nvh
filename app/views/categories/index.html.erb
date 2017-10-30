@@ -1,22 +1,22 @@
 <%= provide :title, t("category.index_view.title") %>
 
-<div class="container" id="categories-box">
+<div class="container index-box">
   <div class="row center">
     <h4><%= t "category.index_view.title" %></h4>
   </div>
-  <div class="row" id="category-header">
+  <div class="row index-header">
     <div class="col s2">
-      <h6 class="category-header-title">
+      <h6 class="index-header-title">
         <%= t "category.index_view.name" %>
       </h6>
     </div>
     <div class="col s6">
-      <h6 class="category-header-title">
+      <h6 class="index-header-title">
         <%= t "category.index_view.description" %>
       </h6>
     </div>
     <div class="col s2">
-      <h6 class="category-header-title">
+      <h6 class="index-header-title">
         <%= t "category.index_view.words" %>
       </h6>
     </div>
@@ -31,4 +31,3 @@
     </div>
   </div>
 </div>
-<%= render "layouts/footer" %>

@@ -1,10 +1,45 @@
-<div class="section no-pad-bot cover" id="index-banner">
-  <div class="row" id="title-box">
-    <h1 class="header center white-text">
-      <%= t "title" %>
-    </h1>
-    <div class="row center white-text">
-      <h5 class="header col s12 light"><%= t "home.description" %></h5>
+<%= provide :title, t("page_title.home") %>
+<div class="parallax-container">
+  <div class="parallax">
+    <%= image_tag "bg01.png" %>
+  </div>
+  <div class="container home-title grey darken-3">
+    <h2><%= t "home.banner" %></h2>
+    <h5><%= t "home.banner_des" %></h5>
+  </div>
+  <a class="waves-effect waves-light btn" id="get-start-btn">
+    <%= t "home.banner_btn" %>
+  </a>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col l4 s12">
+      <div class="center promo promo-example">
+        <i class="material-icons">border_color</i>
+        <p class="promo-caption"><%= t "home.function_1" %></p>
+        <p class="light center">
+          <%= t "home.function_des_1" %>
+        </p>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <div class="center promo promo-example">
+        <i class="material-icons">group</i>
+        <p class="promo-caption"><%= t "home.function_2" %></p>
+        <p class="light center">
+          <%= t "home.function_des_2" %>
+        </p>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <div class="center promo promo-example">
+        <i class="material-icons">format_list_bulleted</i>
+        <p class="promo-caption"><%= t "home.function_3" %></p>
+        <p class="light center">
+          <%= t "home.function_des_3" %>
+        </p>
+      </div>
     </div>
   </div>
   <div class="row center">
@@ -15,3 +50,19 @@
   <br>
   <br>
 </div>
+
+<div class="parallax-container">
+  <div class="parallax">
+    <%= image_tag "bg01.jpg" %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col s12 l12 m12 center contact-us">
+    <h4><%= t "home.contact_us" %></h4>
+    <p class="left-align light">
+      <%= t "home.contact_us_des" %>
+    </p>
+  </div>
+</div>
+<%= render "layouts/footer" %>

@@ -1,5 +1,7 @@
 en:
   title: "Framgia E-learning System"
+  page_title:
+    home: "Home"
   header:
     app_name: "FELS"
     about: "About Us"
@@ -7,10 +9,36 @@ en:
     signup: "Sign Up"
   footer:
     copyright: "© fels.framgia.com"
+    contact_info: "Contact Information"
+    contact_des: "You can contact us with the links aside"
+    twitter: "Twitter"
+    linkein: "Linkein"
+    facebook: "Facebook"
+    github: "Github"
   home:
     signup: "Sign Up"
     description: "The most intelligent way to improve vocabulary in English."
     get_start: "Get Started"
+    banner: "Framgia English Learning System"
+    banner_des: "The most intelligent way to improve vocabulary."
+    banner_btn: "Get Start"
+    function_1: "Learning by doing"
+    function_2: "Following"
+    function_3: "Manage your process"
+    function_des_1: "By doing some quiz in an exam, you will remember vocabulary faster than normal learning."
+    function_des_2: "You can follow some people to compete number of words you have learned."
+    function_des_3: "User can see their learning progress."
+    contact_us: "Contact Us"
+    contact_us_des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Nullam scelerisque id nunc nec volutpat.
+      Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros.
+      Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros.
+      Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus.
+      Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed.
+      Nulla imperdiet semper molestie.
+      Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat.
+      Nullam eget dignissim mauris, non tristique erat.
+      Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
   user:
     create_success: "Create account succesful"
     create_failed: "Cannot create account"

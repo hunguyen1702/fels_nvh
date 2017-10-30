@@ -28,6 +28,7 @@ class User < ApplicationRecord
   validates :password, presence: true,
     length: {minimum: Settings.user.min_password},
     on: :update, if: :password_changed?
+  validate :avatar_size
 
   class << self
     def digest string
@@ -42,6 +43,10 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+  end
+
+  def is_user? user
+    self == user
   end
 
   def create_reset_digest
@@ -83,6 +88,13 @@ class User < ApplicationRecord
   end
 
   private
+
+  def avatar_size
+    return if avatar.size < Settings.user.avatar_size.megabytes
+
+    errors.add :avatar,
+      t("user.edit_view.avatar_error", size: Settings.user.avatar_size)
+  end
 
   def downcase_email
     email.downcase!

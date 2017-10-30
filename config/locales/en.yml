@@ -59,6 +59,16 @@ en:
       signup: "Sign Up"
       create: "Create account"
       confirmation: "Password confirmation"
+    edit_view:
+      title: "Profile Settings"
+      update_success: "Information updated succesful"
+      update_failed: "Cannot update user information"
+      save_change: "Save changes"
+      inform_login: "Please log in first"
+      avatar_error: "should be less than %{size}MB"
+      change_avatar: "change avatar"
+      avatar_error_js: "Maximum file size is %{size}MB.
+        Please choose a smaller file."
   session:
     new_view:
       login: "Log In"

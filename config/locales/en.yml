@@ -7,6 +7,12 @@ en:
     about: "About Us"
     login: "Log In"
     signup: "Sign Up"
+    profile_setting: "Profile Settings"
+    history: "History"
+    logout: "Log out"
+    start_lesson: "Start Lesson"
+    word_list: "Words List"
+    acount: "Account"
   footer:
     copyright: "© fels.framgia.com"
     contact_info: "Contact Information"
@@ -45,9 +51,12 @@ en:
     new_view:
       signup: "Sign Up"
       create: "Create account"
-    form_view:
-      avatar: "Avatar"
-      username: "Username"
-      email: "Email"
-      password: "Password"
-      password_confirmation: "Confirmation"
+      confirmation: "Password confirmation"
+  session:
+    new_view:
+      login: "Log In"
+      forgot_password: "Forgot password?"
+      remember_me: "Remember me"
+      go: "Go!"
+      login_failed: "Cannot log in"
+      login_success: "Log in succesful"

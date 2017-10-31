@@ -1,4 +1,4 @@
-Hi <%= @user.name %>,
+<%= t "mailer.account_activation.greeting", {user_name: @user.name} %>,
 
 <%= t "mailer.activation.content" %>
 

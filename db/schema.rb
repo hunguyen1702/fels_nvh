@@ -89,6 +89,8 @@ ActiveRecord::Schema.define(version: 20171024132147) do
     t.datetime "activated_at"
     t.integer "role", default: 0
     t.string "avatar"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

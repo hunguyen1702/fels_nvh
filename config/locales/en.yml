@@ -53,6 +53,8 @@ en:
     activate_success: "Account activated"
     not_activate: "Account not activated.
       Check your email for the activation link."
+    not_exist: "User not found"
+    invalid_info: "Invalid info"
     new_view:
       signup: "Sign Up"
       create: "Create account"
@@ -65,6 +67,18 @@ en:
       go: "Go!"
       login_failed: "Cannot log in"
       login_success: "Log in succesful"
+  password_reset:
+    new_view:
+      title: "Forgot password"
+      send_mail: "Send mail reset"
+    edit_view:
+      title: "Reset Password"
+      confirmation: "Password confirmation"
+      update_password: "Update password"
+      expired: "Password reset has expired."
+      empty: "Password cannot be empty"
+      invalid: "Invalid password"
+      success: "Update password succesful"
   mailer:
     account_activation:
       activate: "Activate"
@@ -72,3 +86,12 @@ en:
       greeting: "Hi %{user_name},"
       content: "Welcome to Framgia English Learning System!
         Click on the link below to activate your account:"
+    password_reset:
+      reset_link_name: "Reset password"
+      click: "To reset your password click the link below:"
+      expire: "This link will expire in two hours."
+      ignore: "If you did not request your password to be reset,
+        please ignore this email and your password will stay as it is."
+      subject: "Password Reset"
+      email_sent: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"

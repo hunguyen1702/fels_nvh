@@ -10,6 +10,8 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.datetime :activated_at
       t.integer :role, default: 0
       t.string :avatar
+      t.string :reset_digest
+      t.datetime :reset_sent_at
 
       t.timestamps
     end

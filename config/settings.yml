@@ -5,3 +5,4 @@ user:
   max_name: 50
   max_email: 255
   min_password: 6
+  password_reset_expired: 2

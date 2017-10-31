@@ -1,0 +1,27 @@
+<%= provide :title, t("password_reset.new_view.title") %>
+<div class="parallax-container signup-parallax">
+  <div class="parallax">
+    <%= image_tag "bg01.png" %>
+  </div>
+  <div class="row form-box">
+    <div class="row center" id="signup-title">
+      <h4><%= t "password_reset.edit_view.title" %></h4>
+    </div>
+    <br>
+    <div class="container">
+      <%= form_for :password_reset, url: password_resets_path do |f| %>
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.email_field :email, class: "validate" %>
+            <%= f.label :email, for: :email %>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.submit t("password_reset.new_view.send_mail"),
+            class: "btn btn-large btn-register waves-effect waves-light" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "layouts/footer" %>

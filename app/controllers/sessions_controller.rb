@@ -5,9 +5,13 @@ class SessionsController < ApplicationController
     user = User.find_by email: params[:session][:email].downcase
 
     if user && user.authenticate(params[:session][:password])
-      log_in user
-      params[:session][:remember_me].to_i == 1 ? remember(user) : forget(user)
-      flash[:info] = t "session.new_view.login_success"
+      if user.is_activated?
+        log_in user
+        params[:session][:remember_me].to_i == 1 ? remember(user) : forget(user)
+        flash[:success] = t "session.new_view.login_success"
+      else
+        flash[:warning] = t "user.not_activate"
+      end
       redirect_to root_path
     else
       flash[:danger] = t "session.new_view.login_failed"

@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20171024132147) do
     t.string "email"
     t.string "name"
     t.string "password_digest"
+    t.string "remember_digest"
     t.integer "role", default: 0
     t.string "avatar"
     t.datetime "created_at", null: false

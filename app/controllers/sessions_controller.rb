@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       log_in user
+      params[:session][:remember_me].to_i == 1 ? remember(user) : forget(user)
       flash[:info] = t "session.new_view.login_success"
       redirect_to root_path
     else

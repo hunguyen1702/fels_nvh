@@ -1,8 +1,10 @@
 # User
 User.create! name: "Nguyen Viet Hung",
   email: "example@fels.com",
-  password_digest: "123123",
-  role: 0
+  password: "123123",
+  password_confirmation: "123123",
+  role: 1,
+  is_activated: true
 
 40.times do |n|
   name = Faker::Name.name
@@ -10,7 +12,9 @@ User.create! name: "Nguyen Viet Hung",
   password = "123123"
   User.create! name: name,
     email: email,
-    password_digest: password
+    password: password,
+    password_confirmation: password,
+    is_activated: true
 end
 
 # Activity
@@ -24,8 +28,8 @@ users = User.order(:created_at).take 5
 end
 
 # Category
-20.times do
-  name = Faker::Book.title
+20.times do |n|
+  name = Faker::Book.title + n.to_s
   description = Faker::Educator.university * 5
   Category.create! name: name,
     description: description
@@ -33,8 +37,8 @@ end
 
 # Word
 categories = Category.order(:created_at).take 5
-20.times do
-  content = Faker::Superhero.descriptor
+20.times do |n|
+  content = Faker::Superhero.descriptor + n.to_s
   categories.each{|category| category.words.create! content: content}
 end
 

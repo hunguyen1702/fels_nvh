@@ -1,13 +1,15 @@
 <div class="navbar-fixed">
   <ul id="dropdown1" class="dropdown-content">
     <li>
-      <a href="#!" class="a-dropdown">
-        <i class="material-icons dropdown-icons">contacts</i>
+      <%= content_tag :a, href: edit_user_path(current_user),
+        rel: "nofollow", class: "a-dropdown" do %>
+        <%= content_tag :i, "contacts",
+          class: "material-icons dropdown-icons" %>
         <%= t "header.profile_setting" %>
-      </a>
+      <% end %>
     </li>
     <li>
-      <a href="#!" class="a-dropdown">
+      <a href="#" class="a-dropdown">
         <i class="material-icons dropdown-icons">collections_bookmark</i>
         <%= t "header.history" %>
       </a>

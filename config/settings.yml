@@ -7,3 +7,6 @@ user:
   max_email: 255
   min_password: 6
   password_reset_expired: 2
+category:
+  page_size: 10
+  min_words: 15

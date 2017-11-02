@@ -11,7 +11,7 @@
     <li>
       <a href="#" class="a-dropdown">
         <i class="material-icons dropdown-icons">collections_bookmark</i>
-        <%= t "header.history" %>
+        <%= t "header.lesson" %>
       </a>
     </li>
     <li class="divider"></li>
@@ -29,9 +29,7 @@
         class: "brand-logo", id: "home-logo" %>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>
-          <a href="#about">
-            <%= t "header.start_lesson" %>
-          </a>
+          <%= link_to t("header.start_lesson"), categories_path %>
         </li>
         <li>
           <a href="#about">

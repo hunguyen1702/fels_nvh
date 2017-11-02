@@ -2,13 +2,20 @@ en:
   title: "Framgia E-learning System"
   page_title:
     home: "Home"
+  views:
+    pagination:
+      first: "<< First"
+      last: "Last >>"
+      previous: "< Prev"
+      next: "Next >"
+      truncate: "..."
   header:
     app_name: "FELS"
     about: "About Us"
     login: "Log In"
     signup: "Sign Up"
     profile_setting: "Profile Settings"
-    history: "History"
+    lesson: "Lessons"
     logout: "Log out"
     start_lesson: "Start Lesson"
     word_list: "Words List"
@@ -69,6 +76,14 @@ en:
       change_avatar: "change avatar"
       avatar_error_js: "Maximum file size is %{size}MB.
         Please choose a smaller file."
+  category:
+    index_view:
+      title: "Categories"
+      inform_login: "You have to log in to use this function."
+      start: "go"
+      name: "Name"
+      description: "Description"
+      words: "Words"
   session:
     new_view:
       login: "Log In"

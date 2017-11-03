@@ -1,0 +1,11 @@
+<tr>
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td><%= user.role %></td>
+  <td><%= link_to t("user.index_view.view_profile"), user, class: "btn" %></td>
+  <td>
+    <%= link_to t("user.index_view.delete"),
+      admin_user_path(user), method: :delete,
+      data: {confirm: t("user.confirm_delete")}, class: "btn" %>
+  </td>
+</tr>

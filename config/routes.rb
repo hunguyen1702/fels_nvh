@@ -5,8 +5,15 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  resources :users
+
+  resources :users, except: :destroy
   resources :categories, only: :index
+  resources :words, only: %i(index show)
   resources :account_activations, only: :edit
-  resources :password_resets, except: [:destroy, :show, :index]
+  resources :password_resets, except: %i(destroy show index)
+
+  namespace :admin do
+    resources :words, :categories
+    resources :users, only: %i(index destroy)
+  end
 end

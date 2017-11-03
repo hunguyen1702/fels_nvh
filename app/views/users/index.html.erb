@@ -1,0 +1,30 @@
+<%= provide :title, t("user.index_view.title") %>
+
+<div class="container index-box">
+  <div class="row center">
+    <h4><%= t "user.index_view.title" %></h4>
+  </div>
+  <div class="row index-header">
+    <div class="col s2">
+      <h6 class="index-header-title">
+        <%= t "user.index_view.name" %>
+      </h6>
+    </div>
+    <div class="col s3">
+      <h6 class="index-header-title">
+        <%= t "user.index_view.email" %>
+      </h6>
+    </div>
+    <div class="col s2"></div>
+    <div class="row s2"></div>
+    <div class="row s3"></div>
+  </div>
+  <div class="row">
+    <ul>
+      <%= render @users %>
+    </ul>
+    <div class="row center">
+      <%= paginate @users, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+</div>

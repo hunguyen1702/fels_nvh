@@ -1,5 +1,6 @@
 en:
   title: "Framgia E-learning System"
+  inform_login: "You have to log in to use this function."
   page_title:
     home: "Home"
   views:
@@ -62,10 +63,17 @@ en:
       Check your email for the activation link."
     not_exist: "User not found"
     invalid_info: "Invalid info"
+    delete_success: "Delete user succesful"
+    delete_failed: "Delete user failed"
+    require_admin: "You have no rights to do this action."
+    confirm_delete: "Are you sure?"
     new_view:
       signup: "Sign Up"
       create: "Create account"
       confirmation: "Password confirmation"
+    show_view:
+      learned_word: "learned words"
+      lesson_done: "lessons done"
     edit_view:
       title: "Profile Settings"
       update_success: "Information updated succesful"
@@ -76,14 +84,30 @@ en:
       change_avatar: "change avatar"
       avatar_error_js: "Maximum file size is %{size}MB.
         Please choose a smaller file."
+    index_view:
+      title: "Users list"
+      admin_title: "Users Management"
+      name: "Name"
+      email: "Email"
+      view_profile: "View profile"
+      delete: "delete"
+      role: "Role"
   category:
     index_view:
       title: "Categories"
-      inform_login: "You have to log in to use this function."
       start: "go"
       name: "Name"
       description: "Description"
       words: "Words"
+  word:
+    not_found: "Word not found"
+    index_view:
+      title: "Words List"
+      word: "Word"
+      category: "Category"
+      status: "Status"
+      detail: "Detail"
+      learned: "Learned"
   session:
     new_view:
       login: "Log In"

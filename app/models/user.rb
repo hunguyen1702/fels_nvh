@@ -30,6 +30,13 @@ class User < ApplicationRecord
     on: :update, if: :password_changed?
   validate :avatar_size
 
+  scope :users_info, ->{select :id, :name, :email, :avatar}
+  scope :activated_user, ->{where is_activated: true}
+  scope :all_except, ->user{where.not id: user}
+
+  paginates_per Settings.user.page_size
+  max_paginates_per Settings.user.page_size
+
   class << self
     def digest string
       if ActiveModel::SecurePassword.min_cost
@@ -85,6 +92,16 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.user.password_reset_expired.hours.ago
+  end
+
+  def learned_words
+    done_lessons = Lesson.user_lesson id
+    user_answers = Result.lesson_answers done_lessons
+    Answer.correct_answers(user_answers).select :word_id
+  end
+
+  def learned? word
+    learned_words.any?{|w| w.word_id == word.id}
   end
 
   private

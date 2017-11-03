@@ -1,0 +1,25 @@
+<%= provide :title, t("user.index_view.admin_title") %>
+<div class="container">
+  <div class="row center">
+    <h4><%= t "user.index_view.admin_title" %></h4>
+  </div>
+  <table class="striped">
+    <div class="row">
+      <thead>
+        <tr>
+          <th data-field="name"><%= t "user.index_view.name" %></th>
+          <th data-field="email"><%= t "user.index_view.email" %></th>
+          <th data-field="role"><%= t "user.index_view.role" %></th>
+          <th data-field="view"></th>
+          <th data-field="create"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @users %>
+      </tbody>
+    </div>
+  </table>
+  <div class="row center">
+    <%= paginate @users, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>

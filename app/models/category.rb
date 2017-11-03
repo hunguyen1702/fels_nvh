@@ -6,8 +6,8 @@ class Category < ApplicationRecord
   max_paginates_per Settings.category.page_size
 
   scope :category_info, ->{select :id, :name, :description}
-  scope :not_empty_categories, -> do
+  scope :not_empty_categories, (lambda do
     joins(:words).group(:category_id)
       .having "count(category_id) >= ?", Settings.category.min_words
-  end
+  end)
 end

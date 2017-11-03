@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
-  before_action :load_user, except: %i(new create)
-  before_action :logged_in_user, :correct_user, only: %i(edit update)
+  before_action :load_user, except: %i(new create index)
+  before_action :logged_in_user, only: %i(edit update index)
+  before_action :correct_user, only: :update
+
+  def index
+    @users = User.users_info.all_except(current_user)
+      .activated_user.page params[:page]
+  end
 
   def new
     @user = User.new
@@ -17,6 +23,8 @@ class UsersController < ApplicationController
       redirect_to signup_path
     end
   end
+
+  def show; end
 
   def edit; end
 
@@ -38,14 +46,6 @@ class UsersController < ApplicationController
     return if @user && @user.is_activated?
     flash[:danger] = t "user.not_exist"
     redirect_to root_path
-  end
-
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t "user.edit_view.inform_login"
-    redirect_to login_path
   end
 
   def correct_user

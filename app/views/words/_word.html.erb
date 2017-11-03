@@ -1,0 +1,17 @@
+<li>
+  <div class="row">
+    <div class="col s2 item-list-data">
+      <%= word.content %>
+    </div>
+    <div class="col s4 item-list-data">
+      <%= word.category.name %>
+    </div>
+    <div class="col s3 item-list-data">
+      <%= t "word.index_view.learned" if current_user.learned? word %>
+    </div>
+    <div class="col s3 item-list-data">
+      <%= link_to t("word.index_view.detail"), word_path(word.id),
+        class: "waves-effect waves-light btn" %>
+    </div>
+  </div>
+</li>

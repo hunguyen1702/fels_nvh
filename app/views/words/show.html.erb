@@ -1,0 +1,13 @@
+<%= provide :title, @word.content %>
+<div class="container" id="word-box">
+  <h6 class="word-category"><%= @word.category.name %></h6>
+  <div class="row">
+    <h4 id="word-title"><%= @word.content %></h4>
+    <div class="divider"></div>
+    <div class="row examples-list">
+      <ul>
+        <%= render @word.examples %>
+      </ul>
+    </div>
+  </div>
+</div>

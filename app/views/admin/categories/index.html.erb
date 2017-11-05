@@ -1,0 +1,30 @@
+<%= provide :title, t("admin.category.index.title") %>
+<div class="container">
+  <div class="row center">
+    <h4><%= t "admin.category.index.title" %></h4>
+  </div>
+  <table class="striped" id="category-table">
+    <div class="row">
+      <thead>
+        <tr>
+          <th data-field="name"><%= t "admin.category.index.name" %></th>
+          <th data-field="description"><%= t "admin.category.index.description" %></th>
+          <th data-field="words"><%= t "admin.category.index.words" %></th>
+          <th data-field="last_update"><%= t "admin.category.index.last_update" %></th>
+          <th data-field="edit"></th>
+          <th data-field="delete">
+            <%= link_to t("admin.category.index.new"),
+              new_admin_category_path, remote: true,
+              class: "waves-effect waves-light btn", id: "new-category-btn" %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @categories %>
+      </tbody>
+    </div>
+  </table>
+  <div class="row center">
+    <%= paginate @categories, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>

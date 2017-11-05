@@ -1,0 +1,3 @@
+$('#category-table').before('<%= j render "form", category: @category %>');
+$('#new-category-box').hide().slideDown();
+$('#new-category-btn').bind('click', false);

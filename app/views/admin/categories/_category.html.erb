@@ -1,0 +1,39 @@
+<tr id="category-row-<%= category.id %>">
+  <td><%= category.name %></td>
+  <td><%= category.description %></td>
+  <td><%= category.words.size %></td>
+  <td><%= time_ago_in_words(category.updated_at) %></td>
+  <td>
+    <%= link_to t("admin.category.index.edit"),
+      "#cat-modal-#{category.id}",
+      class: "waves-effect waves-light btn modal-trigger" %>
+  </td>
+  <td>
+    <%= link_to t("admin.category.index.delete"),
+      admin_category_path(category), method: :delete,
+      data: {confirm: t("admin.category.index.confirm_delete")},
+      class: "btn" %>
+  </td>
+</tr>
+<div id="cat-modal-<%= category.id %>" class="modal">
+  <div class="modal-content">
+    <%= form_for category, url: admin_category_path(category),
+      remote: true do |f| %>
+      <div class="row">
+        <div class="input-field">
+          <%= f.text_field :name %>
+          <%= f.label :name, for: :name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <%= f.text_field :description %>
+          <%= f.label :description, for: :description %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit t("admin.category.edit.update"), class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

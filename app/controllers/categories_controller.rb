@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.category_info.not_empty_categories
-      .page params[:page]
+      .desc_time.page params[:page]
   end
 
   private

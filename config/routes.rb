@@ -14,7 +14,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "static_pages#home"
-    resources :words, :categories
+    resources :words
+    resources :categories, except: :show
     resources :users, only: %i(index destroy)
   end
 end

@@ -21,6 +21,10 @@ en:
     start_lesson: "Start Lesson"
     word_list: "Words List"
     acount: "Account"
+    admin:
+      categories: "Categories"
+      words: "Words"
+      users: "Users"
   footer:
     copyright: "© fels.framgia.com"
     contact_info: "Contact Information"
@@ -53,6 +57,11 @@ en:
       Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat.
       Nullam eget dignissim mauris, non tristique erat.
       Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
+    admin:
+      title: "FELS Dashboard"
+      users: "%{total} Users"
+      categories: "%{total} Categories"
+      words: "%{total} Words"
   user:
     create_success: "Create account successful.
       Please check your email to activate your account"

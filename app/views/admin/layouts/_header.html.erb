@@ -1,0 +1,43 @@
+<div class="navbar-fixed">
+  <ul id="dropdown1" class="dropdown-content">
+    <li>
+      <%= content_tag :a, href: edit_user_path(current_user),
+        rel: "nofollow", class: "a-dropdown" do %>
+        <%= content_tag :i, "contacts",
+          class: "material-icons dropdown-icons" %>
+        <%= t "header.profile_setting" %>
+      <% end %>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <%= content_tag :a, href: logout_path, rel: "nofollow",
+        "data-method": :delete, class: "a-dropdown" do %>
+        <%= content_tag :i, "exit_to_app", class: "material-icons dropdown-icons" %>
+        <%= t "header.logout" %>
+      <% end %>
+    </li>
+  </ul>
+  <nav class="nav-extended green darken-4">
+    <div class="nav-wrapper">
+      <%= link_to t("header.app_name"), admin_root_path,
+        class: "brand-logo", id: "home-logo" %>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <%= link_to t("header.admin.categories"), admin_categories_path %>
+        </li>
+        <li>
+          <%= link_to t("header.admin.words"), admin_words_path %>
+        </li>
+        <li>
+          <%= link_to t("header.admin.users"), admin_users_path %>
+        </li>
+        <li>
+          <a class="dropdown-button" href="#!" data-activates="dropdown1">
+            <%= t "header.account" %>
+            <i class="material-icons right" id="dd-arrow">arrow_drop_down</i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

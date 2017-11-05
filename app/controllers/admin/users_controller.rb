@@ -1,4 +1,4 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < AdminController
   before_action :logged_in_user, :verify_admin!
   before_action :load_user, only: :destroy
 

@@ -1,0 +1,37 @@
+<%= provide :title, t("home.admin.title") %>
+
+<div class="container">
+  <div class="container">
+    <div class="row center">
+      <h3><%= t "home.admin.title" %></h3>
+    </div>
+  </div>
+  <div class="row"></div>
+  <div class="row">
+    <div class="col l4 s12">
+      <div class="center promo promo-example">
+        <i class="material-icons">group</i>
+        <div class="row">
+          <%= content_tag :h4, t("home.admin.users", total: @total_users) %>
+        </div>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <div class="center promo promo-example">
+        <i class="material-icons">border_color</i>
+        <div class="row">
+          <%= content_tag :h4,
+            t("home.admin.categories", total: @total_categories) %>
+        </div>
+      </div>
+    </div>
+    <div class="col l4 s12">
+      <div class="center promo promo-example">
+        <i class="material-icons">format_list_bulleted</i>
+        <div class="row">
+          <%= content_tag :h4, t("home.admin.words", total: @total_words) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

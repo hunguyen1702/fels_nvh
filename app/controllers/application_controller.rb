@@ -11,11 +11,4 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "user.edit_view.inform_login"
     redirect_to login_path
   end
-
-  def verify_admin!
-    return if current_user.admin?
-
-    flash[:danger] = t "user.require_admin"
-    redirect_to users_path
-  end
 end

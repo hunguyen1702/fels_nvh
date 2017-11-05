@@ -1,0 +1,16 @@
+<% @user ||= current_user %>
+<div class="row center" id="follow-info">
+  <div class="col l6">
+    <div class="row">
+      <%= link_to content_tag(:h5, @user.following.size) + t("user.following"),
+        following_user_path(@user), class: "follow-link" %>
+    </div>
+  </div>
+  <div class="col l6">
+    <div class="row">
+      <%= link_to content_tag(:h5, @user.followers.size, id: "followers") +
+        t("user.followers"), followers_user_path(@user),
+        class: "follow-link" %>
+    </div>
+  </div>
+</div>

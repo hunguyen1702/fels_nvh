@@ -63,6 +63,11 @@ en:
       categories: "%{total} Categories"
       words: "%{total} Words"
   user:
+    following: "following"
+    follower: "followers"
+    follow: "follow"
+    unfollow: "unfollow"
+    empty_follow: "No %{title}"
     create_success: "Create account successful.
       Please check your email to activate your account"
     create_failed: "Cannot create account"

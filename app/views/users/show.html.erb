@@ -1,33 +1,5 @@
 <%= provide :title, @user.name %>
 
 <div class="row" id="feed">
-  <div class="col l2 z-depth-1" id="user-quick-info">
-    <div class="row center">
-      <%= image_tag @user.avatar.url, class: "avatar" %>
-    </div>
-    <div class="row center" id="username">
-      <h5><%= @user.name %></h5>
-    </div>
-    <div class="divider"></div>
-    <div class="row" id="word-info">
-      <div class="row left">
-        <a href="">
-          <i class="material-icons">collections_bookmark</i>
-          <h6 class="h6-info">
-            <%= @user.learned_words.size %>
-            <%= t "user.show_view.learned_word" %>
-          </h6>
-        </a>
-      </div>
-      <div class="row left">
-        <a href="">
-          <i class="material-icons">border_color</i>
-          <h6 class="h6-info">
-            <%= @user.lessons.size %>
-            <%= t "user.show_view.lesson_done" %>
-          </h6>
-        </a>
-      </div>
-    </div>
-  </div>
+  <%= render "info" %>
 </div>

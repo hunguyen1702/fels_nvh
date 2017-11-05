@@ -103,6 +103,26 @@ class User < ApplicationRecord
     learned_words.any?{|w| w.word_id == word.id}
   end
 
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include? other_user
+  end
+
+  def relationship
+    active_relationships.build
+  end
+
+  def current_relationship user_id
+    active_relationships.find_by followed_id: user_id
+  end
+
   private
 
   def avatar_size

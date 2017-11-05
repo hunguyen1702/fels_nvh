@@ -4,6 +4,38 @@
   <div class="row center">
     <h4><%= t "word.index_view.title" %></h4>
   </div>
+  <div class="container">
+    <%= form_tag words_path, method: :get do %>
+      <div class="row">
+        <h6 class="search-field-title">
+          <%= t "word.index_view.search" %>
+        </h6>
+        <%= text_field_tag :search, params[:search],
+          class: "inline filter-field-tags" %>
+      </div>
+      <div class="row">
+        <h6 class="search-field-title">
+          <%= t "word.index_view.filter_category" %>
+        </h6>
+        <%= select_tag :category,
+          options_from_collection_for_select(Category.brief_info, :id, :name),
+          prompt: t("word.index_view.category"), class: "filter-field-tags" %>
+      </div>
+      <div class="row">
+        <h6 class="search-field-title">
+          <%= t "word.index_view.filter_status" %>
+        </h6>
+        <%= select_tag :learned,
+          options_for_select({learned: Settings.word.learned,
+          unlearned: Settings.word.unlearned}),
+          prompt: t("word.index_view.status"), class: "filter-field-tags" %>
+      </div>
+      <div class="row">
+        <%= submit_tag t("word.index_view.apply"),
+          class: "btn waves-light waves-effect" %>
+      </div>
+    <% end %>
+  </div>
   <div class="row index-header">
     <div class="col s2">
       <h6 class="index-header-title">
@@ -22,7 +54,7 @@
     </div>
     <div class="row s3"></div>
   </div>
-  <div class="row">
+  <div class="row" id="words-list">
     <ul>
       <%= render @words %>
     </ul>

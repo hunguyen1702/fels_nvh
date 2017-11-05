@@ -2,7 +2,8 @@ class Admin::WordsController < AdminController
   before_action :load_word, only: %i(edit update destroy)
 
   def index
-    @words = Word.all.page params[:page]
+    @words = Word.all.keyword_search(params[:search])
+      .by_category(params[:category]).page params[:page]
   end
 
   def new
@@ -11,7 +12,7 @@ class Admin::WordsController < AdminController
       @word.attributes = session[:word]
       session.delete :word
     else
-      Settings.word.max_answers.times {@word.answers.build}
+      Settings.word.max_answers.times{@word.answers.build}
     end
   end
 
@@ -58,7 +59,7 @@ class Admin::WordsController < AdminController
     redirect_to admin_words_path
   end
 
-  def process_saving success_msg = "", redirect_failed_path
+  def process_saving success_msg, redirect_failed_path
     if @word.valid?
       @word.save
       flash[:success] = success_msg

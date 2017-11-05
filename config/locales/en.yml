@@ -117,6 +117,12 @@ en:
       status: "Status"
       detail: "Detail"
       learned: "Learned"
+      search: "Search by word:"
+      filter_category: "Filter by category:"
+      filter_status: "Filter by status:"
+      apply: "apply"
+      edit: "edit"
+      delete: "delete"
   session:
     new_view:
       login: "Log In"

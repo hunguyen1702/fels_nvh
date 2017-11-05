@@ -2,11 +2,11 @@
   <td><%= word.content %></td>
   <td><%= word.category.name %></td>
   <td>
-    <%= link_to "edit", edit_admin_word_path(word),
+    <%= link_to t("word.index_view.edit"), edit_admin_word_path(word),
       class: "waves-effect waves-light btn modal-trigger" %>
   </td>
   <td>
-    <%= link_to "delete",
+    <%= link_to t("word.index_view.delete"),
       admin_word_path(word), method: :delete,
       data: {confirm: t("admin.word.index.confirm_delete")},
       class: "btn" %>

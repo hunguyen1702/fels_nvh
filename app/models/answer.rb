@@ -12,7 +12,8 @@ class Answer < ApplicationRecord
   private
 
   def valid_answer?
-    errors.add :is_correct,
-      I18n.t("admin.answer.create.is_correct_nil") if is_correct.nil?
+    if is_correct.nil?
+      errors.add :is_correct, I18n.t("admin.answer.create.is_correct_nil")
+    end
   end
 end

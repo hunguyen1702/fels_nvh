@@ -1,0 +1,11 @@
+<%= provide :submit_path, admin_words_path %>
+<%= provide :submit_text, t("admin.word.create.submit_text") %>
+<%= provide :title, t("admin.word.create.title") %>
+<div class="container" id="new-category-box">
+  <div class="row center">
+    <h4><%= t"admin.word.create.title" %></h4>
+  </div>
+  <div class="row">
+    <%= render "form", word: @word %>
+  </div>
+</div>

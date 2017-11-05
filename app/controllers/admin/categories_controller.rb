@@ -32,7 +32,7 @@ class Admin::CategoriesController < AdminController
   end
 
   def destroy
-    if @category.words.size > 0
+    if @category.words.size > Settings.category.empty
       flash[:danger] = t "admin.category.destroy.not_empty_cat"
     else
       if @category.destroy

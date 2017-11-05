@@ -1,0 +1,14 @@
+<tr id="category-row-<%= word.id %>">
+  <td><%= word.content %></td>
+  <td><%= word.category.name %></td>
+  <td>
+    <%= link_to "edit", edit_admin_word_path(word),
+      class: "waves-effect waves-light btn modal-trigger" %>
+  </td>
+  <td>
+    <%= link_to "delete",
+      admin_word_path(word), method: :delete,
+      data: {confirm: t("admin.word.index.confirm_delete")},
+      class: "btn" %>
+  </td>
+</tr>

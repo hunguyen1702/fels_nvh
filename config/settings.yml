@@ -11,5 +11,8 @@ user:
 category:
   page_size: 10
   min_words: 15
+  empty: 0
 word:
   page_size: 15
+  max_answers: 4
+  max_new_per_form: 5

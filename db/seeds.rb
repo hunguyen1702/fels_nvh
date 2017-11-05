@@ -35,11 +35,21 @@ end
     description: description
 end
 
-# Word
+# Word & Answers
 categories = Category.order(:created_at).take 5
 20.times do |n|
   content = Faker::Superhero.descriptor + n.to_s
-  categories.each{|category| category.words.create! content: content}
+  categories.each do |category|
+    word = category.words.build
+    word.content = content + n.to_s
+    content = Faker::Superhero.descriptor * 2
+    word.answers << Answer.new(content: content, is_correct: true)
+    3.times do
+      content = Faker::Superhero.descriptor * 2
+      word.answers << Answer.new(content: content, is_correct: false)
+    end
+    word.save
+  end
 end
 
 # Example
@@ -47,16 +57,6 @@ Word.find_each do |word|
   4.times do
     content = Faker::Superhero.descriptor * 2
     word.examples.create! content: content
-  end
-end
-
-# Answer
-Word.find_each do |word|
-  content = Faker::Superhero.descriptor * 2
-  word.answers.create! content: content, is_correct: true
-  3.times do
-    content = Faker::Superhero.descriptor * 2
-    word.answers.create! content: content, is_correct: false
   end
 end
 
@@ -69,7 +69,7 @@ users.each do |user|
       lesson = Lesson.new
       lesson.user = user
       lesson.category = category
-      lesson.status = rand(1..4)
+      lesson.status = 2
       lesson.save if lesson.valid?
     end
   end
@@ -78,9 +78,9 @@ end
 # Result
 lessons = Lesson.order(:created_at).take 10
 lessons.each do |lesson|
-  15.times do |n|
+  5.times do |n|
     word = lesson.category.words[n]
-    answer = word.answers[rand(1..4)]
+    answer = word.answers[rand(0..3)]
 
     result = Result.new
     result.lesson = lesson

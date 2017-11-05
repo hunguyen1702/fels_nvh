@@ -24,6 +24,7 @@ class Word < ApplicationRecord
       where "id not in (?)", ids
     end
   end)
+  scope :random_generate, ->num{order("RAND()").limit num}
 
   paginates_per Settings.word.page_size
   max_paginates_per Settings.word.page_size
@@ -36,7 +37,10 @@ class Word < ApplicationRecord
   end
 
   def have_correct_answer?
-    errors.add :answers, I18n.t("admin.word.create.have_correct_answer") unless
-      answers.select{|answer| answer.is_correct == true}.length == 1
+    correct_answer_num = answers.select{|answer| answer.is_correct == true}
+      .length
+    unless correct_answer_num == Settings.word.correct_answer
+      errors.add :answers, I18n.t("admin.word.create.have_correct_answer")
+    end
   end
 end

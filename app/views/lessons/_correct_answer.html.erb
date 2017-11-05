@@ -1,0 +1,11 @@
+<% unless results_field.object.is_correct.nil? %>
+  <% if results_field.object.is_correct %>
+    <h6 class="answer-tag right-answer-tag">
+      <%= t "lesson.show.right_answer" %>
+    </h6>
+  <% else %>
+    <h6 class="answer-tag wrong-answer-tag ">
+      <%= t "lesson.show.wrong_answer" %>
+    </h6>
+  <% end %>
+<% end %>

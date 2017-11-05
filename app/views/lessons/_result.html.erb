@@ -1,0 +1,26 @@
+<ol>
+  <%= f.fields_for :results do |results_field| %>
+    <li>
+      <div class="row question-row">
+        <strong class="word-content">
+          <%= results_field.object.word.content %>
+        </strong>
+      </div>
+      <% results_field.object.word.answers.each do |answer| %>
+        <div class="row answer-row">
+          <div class="col s1 answer-radio">
+            <%= results_field.radio_button :answer_id,
+              answer.id, disabled: results_field.object.answer.present?,
+              class: "result-radios" %>
+          </div>
+          <div class="col s5 answer-content answer-row">
+            <%= answer.content %>
+          </div>
+        </div>
+      <% end %>
+      <% if f.object.finished? %>
+        <%= render "correct_answer", results_field: results_field %>
+      <% end %>
+    </li>
+  <% end %>
+</ol>

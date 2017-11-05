@@ -1,0 +1,16 @@
+<tr id="lesson-row-<%= lesson.id %>">
+  <td><%= time_ago_in_words(lesson.created_at) %></td>
+  <td><%= lesson.category.name %></td>
+  <td><%= lesson.status %></td>
+  <td><%= lesson.results.size %></td>
+  <td><%= lesson.score %></td>
+  <td>
+    <%= link_to lesson.action_name, lesson,
+      class: "waves-effect waves-light btn" %>
+  </td>
+  <td>
+    <%= link_to t("lesson.index_view.delete"), lesson_path(lesson),
+      method: :delete, data: {confirm: t("lesson.index_view.confirm_delete")},
+      class: "btn waves-light waves-effect", remote: true %>
+  </td>
+</tr>

@@ -20,4 +20,14 @@ class WordsController < ApplicationController
     flash[:danger] = t "word.not_found"
     redirect_to :index
   end
+
+  def filter_by_status status
+    learned_ids = current_user.learned_words
+    case status.to_i
+    when Settings.word.learned
+      @words = @words.id_in_list learned_ids
+    when Settings.word.unlearned
+      @words = @words.id_not_in_list learned_ids
+    end
+  end
 end

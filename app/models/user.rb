@@ -95,9 +95,8 @@ class User < ApplicationRecord
   end
 
   def learned_words
-    done_lessons = Lesson.user_lesson id
-    user_answers = Result.lesson_answers done_lessons
-    Answer.correct_answers(user_answers).select :word_id
+    user_answers = Result.lesson_answers lessons.ids
+    Answer.in_set(user_answers).correct_answers.select :word_id
   end
 
   def learned? word

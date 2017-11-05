@@ -5,8 +5,9 @@ class Answer < ApplicationRecord
   validates :content, presence: true
   validate :valid_answer?
 
-  scope :correct_answers, (lambda do |user_answers|
-    where("id in (?)", user_answers).where is_correct: true
+  scope :correct_answers, ->{where is_correct: true}
+  scope :in_set, (lambda do |user_answers|
+    where("id in (?)", user_answers)
   end)
 
   private

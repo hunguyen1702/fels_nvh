@@ -10,9 +10,10 @@
       <%= category.words.size %>
     </div>
     <div class="col s2 item-list-data">
-      <a class="waves-effect waves-light btn">
-        <%= t "category.index_view.start" %>
-      </a>
+      <%= link_to t("category.index_view.start"),
+        lessons_path(lesson: {category_id: category.id,
+        user_id: current_user.id, status: :fresh}), method: :post,
+        class: "waves-effect waves-light btn" %>
     </div>
   </div>
 </li>

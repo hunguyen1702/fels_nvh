@@ -1,0 +1,40 @@
+<%= provide :title, t("lesson.index_view.title") %>
+<div class="container">
+  <div class="row center">
+    <h4><%= t "lesson.index_view.title" %></h4>
+  </div>
+  <table class="striped" id="category-table">
+    <div class="row">
+      <thead>
+        <tr>
+          <th data-field="create_at">
+            <%= t "lesson.index_view.created_at" %>
+          </th>
+          <th data-field="category">
+            <%= t "lesson.index_view.category" %>
+          </th>
+          <th data-field="status">
+            <%= t "lesson.index_view.status" %>
+          </th>
+          <th data-field="last_update">
+            <%= t "lesson.index_view.num_words" %>
+          </th>
+          <th data-field="score">
+            <%= t "lesson.index_view.score" %>
+          </th>
+          <th data-field="new">
+            <%= link_to t("lesson.index_view.new"), categories_path,
+              class: "waves-effect waves-light btn",
+              id: "new-category-btn" %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render(@lessons) || render("empty") %>
+      </tbody>
+    </div>
+  </table>
+  <div class="row center">
+    <%= paginate @lessons, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>

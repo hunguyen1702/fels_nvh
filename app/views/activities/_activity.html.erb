@@ -1,0 +1,14 @@
+<% @pronoun = current_user.is_user?(activity.user) ? "You" : activity.user.name %>
+<tr class="activity-row z-depth-1" id="activity-row-<%= activity.id %>">
+  <td>
+    <%= content_tag :i, activity_icon(activity), class: "material-icons" %>
+    <%= "#{@pronoun} #{activity.description}" %>
+  </td>
+  <td>
+    <% if current_user.is_user? activity.user %>
+      <%= link_to "X", activity_path(id: activity.id), method: :delete,
+        data: {confirm: t("activity.destroy.confirm_delete")}, class: "btn",
+        remote: true %>
+    <% end %>
+  </td>
+</tr>

@@ -2,4 +2,13 @@
 
 <div class="row" id="feed">
   <%= render "info" %>
+  <div class="col l5 z-depth-1 home-feed">
+    <div class="row profile-headers">
+      <h4><%= t "user.show_view.activities" %></h4>
+    </div>
+    <div class="divider profile-dividers"></div>
+    <table class="profile-list activities-list">
+      <%= render @activities %>
+    </table>
+  </div>
 </div>

@@ -1,0 +1,40 @@
+<div class="container user-home-feed">
+  <div class="row z-depth-1" id="user-info-feed">
+    <div class="col l2">
+      <%= image_tag current_user.avatar.url, class: "feed-avatar" %>
+    </div>
+    <div class="col l4">
+      <h5 class="center"><%= current_user.name %></h5>
+      <div class="divider"></div>
+      <%= render "shared/stats" %>
+    </div>
+    <div class="col l1"></div>
+    <div class="col l2 center">
+      <a href="">
+        <div class="row">
+          <i class="medium material-icons">collections_bookmark</i>
+        </div>
+        <h5 class="h6-info">
+          <%= current_user.learned_words.size %>
+          <%= t "user.show_view.learned_word" %>
+        </h5>
+      </a>
+    </div>
+    <div class="col l2 center">
+      <a href="">
+        <div class="row">
+          <i class="medium material-icons">border_color</i>
+        </div>
+        <h5 class="h6-info">
+          <%= current_user.lessons.size %>
+          <%= t "user.show_view.lesson_done" %>
+        </h5>
+      </a>
+    </div>
+  </div>
+  <div class="row z-depth-1" id="user-info-feed">
+    <table class="profile-list activities-list">
+      <%= render current_user.activities_feed %>
+    </table>
+  </div>
+</div>

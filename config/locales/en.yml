@@ -88,6 +88,7 @@ en:
     show_view:
       learned_word: "learned words"
       lesson_done: "lessons done"
+      activities: "Activities"
     edit_view:
       title: "Profile Settings"
       update_success: "Information updated succesful"
@@ -128,7 +129,12 @@ en:
       apply: "apply"
       edit: "edit"
       delete: "delete"
+  relationship:
+    create_activity: "follow user %{name}"
+    destroy_activity: "unfollow user %{name}"
   lesson:
+    create_activity: "have create a %{category} lesson"
+    finish_activity: "have finished a %{category} lesson"
     not_found: "Lesson not found"
     index_view:
       title: "List of lessons"
@@ -178,6 +184,12 @@ en:
       empty: "Password cannot be empty"
       invalid: "Invalid password"
       success: "Update password succesful"
+  activity:
+    destroy:
+      error: "Error when delete activity"
+      not_found: "Activity not found"
+      not_permit: "You have no right to modify this activity"
+      confirm_delete: "You sure to delete this activity?"
   mailer:
     account_activation:
       activate: "Activate"

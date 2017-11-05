@@ -21,7 +21,7 @@ end
 users = User.order(:created_at).take 5
 
 10.times do
-  action_type = rand(1..4)
+  action_type = rand(0..3)
   description = Faker::Educator.university * 5
   users.each{|user| user.activities.create! action_type: action_type,
     description: description}

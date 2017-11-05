@@ -24,3 +24,7 @@ lesson:
 message:
   success: "success"
   danger: "danger"
+activity:
+  follow_icon: "perm_contact_calendar"
+  create_lesson: "fiber_new"
+  finish_lesson: "playlist_add_check"

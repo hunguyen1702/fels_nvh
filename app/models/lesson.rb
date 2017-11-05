@@ -15,6 +15,8 @@ class Lesson < ApplicationRecord
   validates :user, presence: true
   validates :status, presence: true
 
+  scope :desc, ->{order updated_at: :desc}
+
   paginates_per Settings.lesson.page_size
   max_paginates_per Settings.lesson.page_size
 

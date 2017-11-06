@@ -5,7 +5,11 @@ class Category < ApplicationRecord
   paginates_per Settings.category.page_size
   max_paginates_per Settings.category.page_size
 
-  scope :category_info, ->{select :id, :name, :description}
+  validates :name, presence: true, uniqueness: {case_sensitive: false}
+  validates :description, presence: true
+
+  scope :desc_time, ->{order updated_at: :desc}
+  scope :category_info, ->{select :id, :name, :description, :updated_at}
   scope :not_empty_categories, (lambda do
     joins(:words).group(:category_id)
       .having "count(category_id) >= ?", Settings.category.min_words

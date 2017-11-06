@@ -1,0 +1,21 @@
+<div class="container" id="new-category-box">
+  <div class="row">
+    <%= form_for category, url: admin_categories_path do |f| %>
+      <div class="row">
+        <div class="input-field">
+          <%= f.text_field :name %>
+          <%= f.label :name, for: :name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <%= f.text_field :description %>
+          <%= f.label :description, for: :description %>
+        </div>
+      </div>
+      <div class="row">
+        <%= f.submit t("admin.category.new.create"), class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+$('#cat-modal-<%= @category.id %>').modal('close');
+$('#category-row-<%= @category.id %>').replaceWith('<%= j render "category", category: @category %>');
+$('#category-row-<%= @category.id %>').fadeOut(500);
+$('#category-row-<%= @category.id %>').fadeIn(500);
+Materialize.toast('<%= @message %>', 4000, 'flash-<%= @message_type %>');

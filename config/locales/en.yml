@@ -153,3 +153,29 @@ en:
       subject: "Password Reset"
       email_sent: "Email sent with password reset instructions"
       email_not_found: "Email address not found"
+  admin:
+    category:
+      not_found: "Category not found"
+      index:
+        title: "Categories Management"
+        name: "Name"
+        description: "Description"
+        last_update: "Last update"
+        words: "N. of words"
+        edit: "edit"
+        delete: "delete"
+        new: "new"
+        confirm_delete: "Are you sure to delete this category?"
+      new:
+        create: "create"
+        create_success: "Create category successful"
+        create_failed: "Create category failed"
+      edit:
+        update: "update"
+        update_success: "Update category successful"
+        update_failed: "Update category failed"
+      destroy:
+        delete_success: "Delete category successful"
+        delete_failed: "Cannot delete this category"
+        not_empty_cat: "This category contain several words, please check
+          before delete it"

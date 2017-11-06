@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :password_resets, except: %i(destroy show index)
 
   namespace :admin do
+    root "static_pages#home"
     resources :words, :categories
     resources :users, only: %i(index destroy)
   end

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title yield :title %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag "application",
+      media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application",
+      "data-turbolinks-track": "reload" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%= render "layouts/shim" %>
+  </head>
+
+  <body>
+    <%= render "admin/layouts/header" %>
+    <%= yield %>
+    <% flash.each do |message_type, message| %>
+      <%= javascript_tag "Materialize.toast('#{message}',
+        4000, 'flash-#{message_type}')" %>
+    <% end %>
+  </body>
+</html>

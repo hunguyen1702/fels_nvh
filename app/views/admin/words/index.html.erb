@@ -1,0 +1,32 @@
+<%= provide :title, t("admin.word.index.title") %>
+
+<div class="container">
+  <div class="row center">
+    <h4><%= t "admin.word.index.title" %></h4>
+  </div>
+  <table class="striped" id="category-table">
+    <div class="row">
+      <thead>
+        <tr>
+          <th data-field="value">
+            <%= t "admin.word.index.value" %>
+          </th>
+          <th data-field="category">
+            <%= t "admin.word.index.category" %>
+          </th>
+          <th data-field="edit"></th>
+          <th data-field="new">
+            <%= link_to "new", new_admin_word_path,
+              class: "btn waves-effect waves-light" %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @words %>
+      </tbody>
+    </div>
+  </table>
+  <div class="row center">
+    <%= paginate @words, theme: "twitter-bootstrap-3" %>
+  </div>
+</div>

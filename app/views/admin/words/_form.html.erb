@@ -1,0 +1,31 @@
+<%= form_for word, url: yield(:submit_path) do |f| %>
+  <div class="col s9">
+      <div class="row">
+        <h5 class="col s2"><%= t "admin.word.form.category" %></h5>
+        <div class="col s5">
+          <%= f.collection_select :category_id, Category.brief_info,
+            :id, :name, prompt: t("admin.word.form.check_box") %>
+        </div>
+      </div>
+      <div class="row">
+        <h5 class="col s2"><%= t "admin.word.form.word" %></h5>
+        <div class="col s5">
+          <%= f.text_field :content, class: "validate", required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <h5 class="col s2"><%= t "admin.word.form.answer" %></h5>
+        <div class="col s5">
+          <%= f.fields_for :answers do |ff| %>
+              <div class="row">
+                <%= ff.text_field :content, required: true %>
+                <%= ff.check_box :is_correct, class: "rm-checkbox" %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="row center">
+        <%= f.submit yield(:submit_text), class: "btn" %>
+      </div>
+  </div>
+<% end %>

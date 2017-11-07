@@ -14,4 +14,5 @@ class Category < ApplicationRecord
     joins(:words).group(:category_id)
       .having "count(category_id) >= ?", Settings.category.min_words
   end)
+  scope :brief_info, ->{select :id, :name}
 end

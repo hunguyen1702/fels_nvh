@@ -179,3 +179,30 @@ en:
         delete_failed: "Cannot delete this category"
         not_empty_cat: "This category contain several words, please check
           before delete it"
+    word:
+      not_found: "Word not found"
+      form:
+        category: "Category:"
+        word: "Word:"
+        answer: "Answers:"
+        check_box: "Choose one"
+      create:
+        title: "Create word"
+        submit_text: "create"
+        not_enough_answers: "One word must have at least 4 answers"
+        have_correct_answer: "A word must have one correct answers"
+        create_success: "Create word successful"
+      edit:
+        submit_text: "Update"
+        title: "Edit word"
+        update_success: "Update word successful"
+      index:
+        title: "Words Management"
+        confirm_delete: "Are you sure to delete this word?"
+        delete_success: "Delete word successful"
+        delete_failed: "Cannot delete word"
+        value: "Value"
+        category: "Category"
+    answer:
+      create:
+        is_correct_nil: "You have to choose answers is correct or not"

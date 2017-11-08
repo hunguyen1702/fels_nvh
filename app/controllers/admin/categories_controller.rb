@@ -32,14 +32,12 @@ class Admin::CategoriesController < AdminController
   end
 
   def destroy
-    if @category.words.size > Settings.category.empty
+    if @category.words.any?
       flash[:danger] = t "admin.category.destroy.not_empty_cat"
+    elsif @category.destroy
+      flash[:success] = t "admin.category.destroy.delete_success"
     else
-      if @category.destroy
-        flash[:success] = t "admin.category.destroy.delete_success"
-      else
-        flash[:danger] = t "admin.category.destroy.delete_failed"
-      end
+      flash[:danger] = t "admin.category.destroy.delete_failed"
     end
     redirect_to admin_categories_path
   end

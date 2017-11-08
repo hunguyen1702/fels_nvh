@@ -10,6 +10,21 @@ class Word < ApplicationRecord
   validates :content, presence: true
   validate :contain_enough_answer?, :have_correct_answer?
 
+  scope :by_category, (lambda do |category_id|
+    where category_id: category_id if category_id.present?
+  end)
+  scope :keyword_search, (lambda do |keyword|
+    where "content like (?)", "%#{keyword}%" if keyword.present?
+  end)
+  scope :by_status, (lambda do |status, ids|
+    case status.to_i
+    when Settings.word.learned
+      where "id in (?)", ids
+    when Settings.word.unlearned
+      where "id not in (?)", ids
+    end
+  end)
+
   paginates_per Settings.word.page_size
   max_paginates_per Settings.word.page_size
 
@@ -22,6 +37,6 @@ class Word < ApplicationRecord
 
   def have_correct_answer?
     errors.add :answers, I18n.t("admin.word.create.have_correct_answer") unless
-      answers.select {|answer| answer.is_correct == true}.length == 1
+      answers.select{|answer| answer.is_correct == true}.length == 1
   end
 end

@@ -3,7 +3,10 @@ class WordsController < ApplicationController
   before_action :load_word, only: :show
 
   def index
-    @words = Word.all.page params[:page]
+    @words = Word.all.keyword_search(params[:search])
+      .by_category(params[:category])
+      .by_status(params[:learned], current_user.learned_words)
+      .page params[:page]
   end
 
   def show; end

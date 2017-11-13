@@ -37,8 +37,14 @@
           </div>
         </div>
         <div class="row">
-          <%= f.submit t("session.new_view.go"),
+          <div class="col l8">
+            <%= f.submit t("session.new_view.go"),
             class: "btn btn-large btn-register waves-effect waves-light" %>
+          </div>
+          <div class="col l4">
+            <%= link_to t("session.new_view.google_login"),
+              "/auth/google_oauth2" %>
+          </div>
         </div>
       <% end %>
     </div>

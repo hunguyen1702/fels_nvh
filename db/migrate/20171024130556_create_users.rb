@@ -12,6 +12,10 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :avatar
       t.string :reset_digest
       t.datetime :reset_sent_at
+      t.string :provider
+      t.string :uid
+      t.string :oauth_token
+      t.datetime :oauth_expires_at
 
       t.timestamps
     end

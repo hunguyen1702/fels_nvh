@@ -172,6 +172,7 @@ en:
       go: "Go!"
       login_failed: "Cannot log in"
       login_success: "Log in succesful"
+      google_login: "Login with Google+"
   password_reset:
     new_view:
       title: "Forgot password"

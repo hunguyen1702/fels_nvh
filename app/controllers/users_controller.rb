@@ -38,6 +38,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def following
+    @title = t("user.following").capitalize
+    @users = @user.following.page params[:page]
+    render "show_follow"
+  end
+
+  def followers
+    @title = t("user.follower").capitalize
+    @users = @user.followers.page params[:page]
+    render "show_follow"
+  end
+
   private
 
   def load_user

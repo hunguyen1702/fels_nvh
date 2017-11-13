@@ -1,0 +1,4 @@
+<%= form_for current_user.current_relationship(@user.id),
+  html: { method: :delete }, remote: true do |f| %>
+  <%= f.submit t("user.unfollow"), class: "btn waves-effect waves-light" %>
+<% end %>

@@ -1,0 +1,17 @@
+<%= provide :title, @title %>
+
+<div class="row" id="feed">
+  <%= render "info" %>
+  <div class="col l10 z-depth-1">
+    <div class="row center">
+      <h4><%= @title %></h4>
+    </div>
+    <div class="divider"></div>
+    <ul>
+      <%= render(@users) || render("empty") %>
+    </ul>
+    <div class="row center">
+      <%= paginate @users, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+</div>

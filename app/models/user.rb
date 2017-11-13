@@ -123,6 +123,11 @@ class User < ApplicationRecord
     active_relationships.find_by followed_id: user_id
   end
 
+  def activities_feed
+    following_users = Relationship.following_of id
+    Activity.feed(id, following_users).desc
+  end
+
   private
 
   def avatar_size

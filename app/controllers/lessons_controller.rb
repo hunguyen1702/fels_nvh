@@ -2,15 +2,19 @@ class LessonsController < ApplicationController
   before_action :logged_in_user
   before_action :load_lesson, only: %i(show update destroy)
   before_action :correct_user, except: %i(index create)
+  after_action :create_activity, only: %i(create update)
 
   def index
-    @lessons = current_user.lessons.page params[:page]
+    @lessons = current_user.lessons.desc.page params[:page]
   end
 
   def show; end
 
   def create
     @lesson = Lesson.new lesson_params
+    @description = t "lesson.create_activity",
+      category: @lesson.category.name
+    @action_type = :create_lesson
 
     if @lesson.save
       flash[:success] = t "lesson.create.success"
@@ -25,6 +29,11 @@ class LessonsController < ApplicationController
     @lesson.update_attributes lesson_params
     if @lesson.valid?
       @lesson.save
+      if @lesson.reload.finished?
+        @description = t "lesson.finish_activity",
+          category: @lesson.category.name
+        @action_type = :finish_lesson
+      end
       flash[:success] = t "lesson.update.success"
     else
       flash[:danger] = t "lesson.update.failed"

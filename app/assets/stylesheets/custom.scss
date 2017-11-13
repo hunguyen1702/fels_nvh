@@ -347,3 +347,26 @@ select {
 .wrong-answer-tag {
   background-color: $light-pink;
 }
+
+.activity-row {
+  padding-right: 0px !important;
+}
+
+.activities-list {
+  z-index: -1;
+}
+
+.user-home-feed {
+  margin-top: 20px;
+  width: 90% !important;
+}
+
+#user-info-feed {
+  padding-top: 15px;
+}
+
+.feed-avatar {
+  height: 130px;
+  margin-left: 30px;
+  width: 130px;
+}

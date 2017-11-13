@@ -24,7 +24,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @activities = Activity.of_user(@user).desc
+  end
 
   def edit; end
 

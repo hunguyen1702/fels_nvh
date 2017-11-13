@@ -17,3 +17,10 @@ word:
   max_new_per_form: 5
   learned: 1
   unlearned: 0
+  correct_answer: 1
+lesson:
+  page_size: 10
+  answers_num: 5
+message:
+  success: "success"
+  danger: "danger"

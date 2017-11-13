@@ -2,6 +2,8 @@ $dark-green: #1b5e20;
 $gray-white: #f5f5f5;
 $light-gray: #ccc;
 $medium-gray: #ddd;
+$light-blue: #039be5;
+$light-pink: #ef5350;
 
 .btn-icons {
   color: white !important;
@@ -310,4 +312,38 @@ select {
 
 .search-field-title {
   display:inline-block !important;
+}
+
+.answer-radio {
+  width: 40px !important;
+}
+
+.answer-content {
+  padding-top: 1px !important;
+}
+
+.word-content {
+  margin-left: 20px !important;
+}
+
+.question-row {
+  margin-bottom: 15px !important;
+}
+
+.answer-row {
+  margin-bottom: 5px !important;
+}
+
+.answer-tag {
+  margin: 10px auto 10px 100px !important;
+  color: white;
+  width: 100px;
+}
+
+.right-answer-tag {
+  background-color: $light-blue;
+}
+
+.wrong-answer-tag {
+  background-color: $light-pink;
 }

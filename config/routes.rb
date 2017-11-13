@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users, except: :destroy
   resources :categories, only: :index
   resources :words, only: %i(index show)
+  resources :lessons, except: %i(new edit)
   resources :account_activations, only: :edit
   resources :password_resets, except: %i(destroy show index)
 

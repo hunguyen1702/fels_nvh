@@ -1,0 +1,13 @@
+<div class="container">
+  <h4 class="center"><%= @lesson.category.name %></h4>
+  <div class="divider"></div>
+  <%= form_for @lesson, url: @lesson do |f| %>
+    <%= render "result", f: f %>
+    <% unless @lesson.finished? %>
+      <div class="row center">
+        <%= f.submit t("lesson.show.save"),
+          class: "btn waves-effect waves-light" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

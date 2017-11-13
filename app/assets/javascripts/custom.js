@@ -33,5 +33,11 @@ $(document).ready(function() {
     if(this.nextSibling.nodeName != 'label') {
       $(this).after('<label for="'+this.id+'"></label>')
     }
-  })
+  });
+
+  $('input[type=radio].result-radios').each(function() {
+    if(this.nextSibling.nodeName != 'label') {
+      $(this).after('<label for="'+this.id+'"></label>')
+    }
+  });
 })

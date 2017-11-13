@@ -7,6 +7,6 @@ class CreateResults < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :results, [:lesson_id, :word_id, :answer_id], unique: true
+    add_index :results, [:id, :lesson_id, :word_id], unique: true
   end
 end

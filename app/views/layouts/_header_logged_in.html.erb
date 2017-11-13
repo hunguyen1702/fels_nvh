@@ -9,10 +9,12 @@
       <% end %>
     </li>
     <li>
-      <a href="#" class="a-dropdown">
-        <i class="material-icons dropdown-icons">collections_bookmark</i>
+      <%= content_tag :a, href: lessons_path,
+        rel: "nofollow", class: "a-dropdown" do %>
+        <%= content_tag :i, "collections_bookmark",
+          class: "material-icons dropdown-icons" %>
         <%= t "header.lesson" %>
-      </a>
+      <% end %>
     </li>
     <li class="divider"></li>
     <li>

@@ -123,6 +123,36 @@ en:
       apply: "apply"
       edit: "edit"
       delete: "delete"
+  lesson:
+    not_found: "Lesson not found"
+    index_view:
+      title: "List of lessons"
+      new: "new"
+      start: "start"
+      continue: "continue"
+      view: "view"
+      confirm_delete: "Are you sure to delete this lesson,
+        your learned words will be deleted too?"
+      delete: "delete"
+      created_at: "Created at"
+      category: "Category"
+      status: "Status"
+      num_words: "N. of words"
+      score: "Score"
+      empty: "Empty list of lessons"
+    create:
+      failed: "Cannot create lesson"
+      success: "Start your lesson!"
+    update:
+      success: "Lesson updated"
+      failed: "Lesson update failed"
+    destroy:
+      success: "Lesson deleted"
+      failed: "Cannot delete lesson"
+    show:
+      wrong_answer: "Wrong answer"
+      right_answer: "Right answer"
+      save: "save"
   session:
     new_view:
       login: "Log In"

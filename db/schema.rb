@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20171024132147) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["answer_id"], name: "index_results_on_answer_id"
-    t.index ["lesson_id", "word_id", "answer_id"], name: "index_results_on_lesson_id_and_word_id_and_answer_id", unique: true
+    t.index ["id", "lesson_id", "word_id"], name: "index_results_on_id_and_lesson_id_and_word_id", unique: true
     t.index ["lesson_id"], name: "index_results_on_lesson_id"
     t.index ["word_id"], name: "index_results_on_word_id"
   end
